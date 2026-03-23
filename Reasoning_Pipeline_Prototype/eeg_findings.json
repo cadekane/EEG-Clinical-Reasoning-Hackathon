@@ -1,0 +1,15 @@
+{
+  "subject_id": "sub-002",
+  "window_id": "win_001",
+  "signal_quality": "moderate",
+  "artifacts_detected": false,
+  "biomarkers": {
+    "delta_power": "normal",
+    "theta_power": "high",
+    "alpha_power": "low",
+    "beta_power": "normal",
+    "theta_alpha_ratio": "high",
+    "slowing": true
+  },
+  "model_confidence": 0.82
+}
