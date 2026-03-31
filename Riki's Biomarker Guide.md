@@ -9,6 +9,7 @@ pip install eeglabio
 Then run the Python scripts. The pipeline:
 1. Creates 45 Hz bandpass-filtered EEG data
 2. Extracts the 3 AD biomarkers described below
+3. Save 3 biomarkers with csv format
 
 ---
 
