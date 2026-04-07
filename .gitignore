@@ -1,1 +1,4 @@
 datasets/
+processed_eeg.pt
+data/alzheimers_eegpt.pt
+*.pt
