@@ -78,6 +78,40 @@ os.environ["OMP_NUM_THREADS"] = "4"   # suppress onnxruntime affinity warnings
 %run preprocess_and_extract_hpc.py --file /path/to/given_eeg.set
 ```
 
+### Saving Preprocessed .set Files
+
+By default only CSVs are saved. Add `--save_set` to also save the cleaned EEG as EEGLAB `.set` files:
+
+```python
+# Save preprocessed .set for all datasets
+%run preprocess_and_extract_hpc.py --dataset both --save_set
+
+# Save preprocessed .set for a single subject
+%run preprocess_and_extract_hpc.py --dataset auditory --subject sub-001 --save_set
+
+# Save preprocessed .set for a single unknown file (hackathon)
+%run preprocess_and_extract_hpc.py --file /path/to/eeg.set --save_set
+```
+
+Preprocessed `.set` files are saved to:
+```
+biomarker_results/
+└── preprocessed/
+    ├── eyes_closed/
+    │   └── sub-001/
+    │       └── sub-001_task-eyesclosed_eeg.set
+    ├── eyes_open/
+    │   └── sub-001/
+    │       └── sub-001_task-photomark_eeg.set
+    ├── auditory/
+    │   └── sub-001/
+    │       └── sub-001_..._eeg.set
+    └── single/
+        └── given_eeg_preprocessed.set
+```
+
+
+
 ### Output location
 
 All CSVs are saved to:
