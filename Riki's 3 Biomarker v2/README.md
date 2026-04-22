@@ -46,16 +46,6 @@ These six biomarkers together capture EEG slowing (DTABR, theta/alpha), thalamoc
 
 Other biomarkers (microstate A/C/D, regional alpha-2, permutation entropy, transition probabilities) are available in the CSVs as supporting evidence but are secondary.
 
-### Step 4 — How does this connect to `reasoning.py`?
-
-Copy the three `*_summary.csv` files into `Reasoning/input/biomarkers/`.  
-When you run `reasoning.py` on a patient's EEG, it:
-1. Extracts the same biomarkers from the patient file
-2. Looks up the group means from these CSVs
-3. Computes a z-score: `z = (patient_value − group_mean) / group_std`
-4. A z-score near 0 means "similar to that group"; > +2 means "elevated vs that group"; < −2 means "reduced"
-5. Passes those comparisons to the LLM to write a clinical report
-
 ---
 
 ## How to Regenerate (HPC)
@@ -67,10 +57,7 @@ When you run `reasoning.py` on a patient's EEG, it:
 
 ### Prerequisites
 
-Upload the script to your KOA scratch directory:
-```bash
-scp preprocess_and_extract_hpc.py <username>@koa.its.hawaii.edu:/mnt/lustre/koa/scratch/<username>/
-```
+Upload the script to your KOA scratch directory.
 
 Install dependencies in Jupyter on KOA:
 ```python
