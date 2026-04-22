@@ -15,11 +15,12 @@ Open **`key_metrics_summary.csv`**. It has one row per group per condition, with
 
 ### Datasets
 
-| Code in CSV | Full label |
-|---|---|
-| `AD` | Alzheimer's Disease (n=36) |
-| `FTD` | Frontotemporal Dementia (n=23) |
-| `CN` | Cognitively Normal / Healthy (n=29) |
+| Dataset | OpenNeuro | Description | Subjects |
+|---|---|---|---|
+| `eyes_closed` | ds004504 | Eyes-closed resting state EEG | 88 |
+| `eyes_open` | ds006036 | Eyes-open resting state EEG | 88 |
+| `combined` | ds004504 + ds006036 | Per-subject average of eyes_closed and eyes_open — each of the 88 subjects contributes one row | 88 |
+| `auditory` | ds005048 | 40 Hz auditory entrainment EEG (standalone, not comparable to resting state) | 27 |
 
 > **Auditory dataset:** AD (n=17), CN (n=10) only. MCI subjects (n=6) and subjects with missing labels are excluded — MCI is clinically distinct from AD/CN and too small a group for meaningful comparison.
 
