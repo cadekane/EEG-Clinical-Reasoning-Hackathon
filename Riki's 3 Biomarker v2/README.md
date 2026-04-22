@@ -1,6 +1,6 @@
 # EEG Biomarker Results
 
-**Data source:** Raw EEG files — full preprocessing applied per-subject (bandpass → ASR → ICA+ICLabel).  
+**Data source:** Raw EEG files full preprocessing applied per-subject (bandpass → ASR → ICA+ICLabel).  
 **Resting-state datasets:** ds004504 (eyes-closed) + ds006036 (eyes-open), 88 subjects each, 3 groups.  
 **Auditory dataset:** ds005048 (40 Hz auditory entrainment), 27 subjects (CN/AD only), standalone.
 
