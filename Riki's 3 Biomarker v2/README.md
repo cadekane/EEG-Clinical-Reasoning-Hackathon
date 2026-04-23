@@ -8,10 +8,6 @@
 
 ## Quick Start
 
-### What file should I look at first?
-
-Open **`key_metrics_summary.csv`**. It has one row per group per condition, with the key clinical numbers in plain `mean ± std` format. This is the best file for a quick overview.
-
 ### Datasets
 
 | Dataset | OpenNeuro | Description | Subjects |
@@ -20,6 +16,14 @@ Open **`key_metrics_summary.csv`**. It has one row per group per condition, with
 | `eyes_open` | ds006036 | Eyes-open resting state EEG | 88 |
 | `combined` | ds004504 + ds006036 | Per-subject average of eyes_closed and eyes_open — each of the 88 subjects contributes one row | 88 |
 | `auditory` | ds005048 | 40 Hz auditory entrainment EEG (standalone, not comparable to resting state) | 27 |
+
+**Groups:**
+
+| Code in CSV | Full label | n (resting state) | n (auditory) |
+|---|---|---|---|
+| `AD` | Alzheimer's Disease | 36 | 17 |
+| `FTD` | Frontotemporal Dementia | 23 | — |
+| `CN` | Cognitively Normal / Healthy | 29 | 10 |
 
 > **Auditory dataset:** AD (n=17), CN (n=10) only. MCI subjects (n=6) and subjects with missing labels are excluded — MCI is clinically distinct from AD/CN and too small a group for meaningful comparison.
 
@@ -36,8 +40,6 @@ Open **`key_metrics_summary.csv`**. It has one row per group per condition, with
 
 These six biomarkers together capture EEG slowing (DTABR, theta/alpha), thalamocortical degradation (alpha2_abs, alpha2_rel), spectral disorganization (alpha2_spectral_entropy), and network-level dynamics (ms_B_coverage). Use them as the primary features for group classification and z-score comparison.
 
-Other biomarkers (microstate A/C/D, regional alpha-2, permutation entropy, transition probabilities) are available in the CSVs as supporting evidence but are secondary.
-
 ---
 
 ## How to Regenerate (HPC)
@@ -49,7 +51,10 @@ Other biomarkers (microstate A/C/D, regional alpha-2, permutation entropy, trans
 
 ### Prerequisites
 
-Upload the script to your KOA scratch directory.
+Upload the script to your KOA scratch directory:
+```bash
+scp preprocess_and_extract_hpc.py <username>@koa.its.hawaii.edu:/mnt/lustre/koa/scratch/<username>/
+```
 
 Install dependencies in Jupyter on KOA:
 ```python
@@ -74,7 +79,7 @@ os.environ["OMP_NUM_THREADS"] = "4"   # suppress onnxruntime affinity warnings
 # Process a single subject:
 %run preprocess_and_extract_hpc.py --dataset eyes_closed --subject sub-001
 
-# Process a single unknown EEG file (hackathon mode):
+# Process a single EEG file:
 %run preprocess_and_extract_hpc.py --file /path/to/given_eeg.set
 ```
 
@@ -83,14 +88,20 @@ os.environ["OMP_NUM_THREADS"] = "4"   # suppress onnxruntime affinity warnings
 By default only CSVs are saved. Add `--save_set` to also save the cleaned EEG as EEGLAB `.set` files:
 
 ```python
-# Save preprocessed .set for all datasets
+# Save preprocessed .set for all three datasets
+%run preprocess_and_extract_hpc.py --dataset all --save_set
+
+# Save preprocessed .set for eyes_closed + eyes_open only
 %run preprocess_and_extract_hpc.py --dataset both --save_set
 
 # Save preprocessed .set for a single subject
 %run preprocess_and_extract_hpc.py --dataset auditory --subject sub-001 --save_set
 
-# Save preprocessed .set for a single unknown file (hackathon)
+# Save preprocessed .set for a single file
 %run preprocess_and_extract_hpc.py --file /path/to/eeg.set --save_set
+
+# Save preprocessed .set for all files in a folder
+%run preprocess_and_extract_hpc.py --folder /path/to/eeg_folder --save_set
 ```
 
 Preprocessed `.set` files are saved to:
@@ -107,10 +118,8 @@ biomarker_results/
     │   └── sub-001/
     │       └── sub-001_..._eeg.set
     └── single/
-        └── given_eeg_preprocessed.set
+        └── <filename>_preprocessed.set
 ```
-
-
 
 ### Output location
 
@@ -119,15 +128,37 @@ All CSVs are saved to:
 /mnt/lustre/koa/scratch/$USER/biomarker_results/
 ```
 
-### Hackathon single-file mode
+### Single-file mode
 
-When you receive an unknown EEG file at the hackathon:
+For processing a single unknown EEG file:
 ```python
 %run preprocess_and_extract_hpc.py --file /path/to/patient_eeg.set
+
+# Also save the preprocessed .set:
+%run preprocess_and_extract_hpc.py --file /path/to/patient_eeg.set --save_set
 ```
 - No `--dataset` flag needed — works with any `.set` file regardless of experiment type
 - Key biomarkers printed to console immediately
-- Output saved to `biomarker_results/single_subject_biomarkers.csv`
+- Output saved to `biomarker_results/<filename>_biomarkers.csv`
+
+### Folder mode
+
+For processing all `.set` files in a folder:
+```python
+%run preprocess_and_extract_hpc.py --folder /path/to/eeg_folder
+
+# Also save preprocessed .set files:
+%run preprocess_and_extract_hpc.py --folder /path/to/eeg_folder --save_set
+```
+- Finds and processes all `.set` files in the folder
+- Each file gets its own CSV named after the file:
+```
+biomarker_results/
+├── patient_001_biomarkers.csv
+├── patient_002_biomarkers.csv
+└── patient_003_biomarkers.csv
+```
+- Failed files are logged and skipped — remaining files continue processing
 
 ---
 
@@ -182,7 +213,8 @@ CSV output
 | `eyes_open_biomarkers.csv` | 88 (one per subject) | Per-subject detail, eyes-open |
 | `combined_biomarkers.csv` | 88 (one per subject, averaged across conditions) | Per-subject detail, unbiased combined |
 | `auditory_biomarkers.csv` | 27 (one per subject) | Per-subject detail, auditory |
-| `single_subject_biomarkers.csv` | 1 | Hackathon single-file output |
+| `<filename>_biomarkers.csv` | 1 | Single-file mode output — named after the input .set file |
+| `<filename>_biomarkers.csv` × N | 1 per file | Folder mode output — one CSV per .set file found in the folder |
 
 > `combined_biomarkers.csv` has **88 rows** (one per subject) — biomarkers are averaged across eyes-closed and eyes-open conditions per subject. This avoids double-counting the same 88 subjects.
 
