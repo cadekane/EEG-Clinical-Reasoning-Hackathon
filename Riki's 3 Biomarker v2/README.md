@@ -46,7 +46,7 @@ These six biomarkers together capture EEG slowing (DTABR, theta/alpha), thalamoc
 
 ---
 
-## How to Regenerate (HPC)
+## How to Run (HPC)
 
 ### HPC Tips
 
