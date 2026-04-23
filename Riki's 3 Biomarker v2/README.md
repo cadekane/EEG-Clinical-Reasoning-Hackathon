@@ -1,9 +1,13 @@
 # EEG Biomarker Results
 
-**Data source:** Raw EEG files full preprocessing applied per-subject (bandpass → ASR → ICA+ICLabel).  
+**Data source:** Raw EEG files, full preprocessing applied per-subject (bandpass → ASR → ICA+ICLabel).  
 **Resting-state datasets:** ds004504 (eyes-closed) + ds006036 (eyes-open), 88 subjects each, 3 groups.  
 **Auditory dataset:** ds005048 (40 Hz auditory entrainment), 27 subjects (CN/AD only), standalone.
 
+> **New Feature Added:** Make sure you have the latest `preprocess_and_extract_hpc.py` — it now supports single-file (`--file`) and folder (`--folder`) modes for processing new EEG data. Install all required dependencies before running:
+> ```python
+> %pip install mne mne-icalabel meegkit onnxruntime pycrostates antropy scipy h5py eeglabio
+> ```
 ---
 
 ## Quick Start
