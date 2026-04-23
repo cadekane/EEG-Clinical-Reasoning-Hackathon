@@ -1,5 +1,5 @@
 """
-01_preprocess_and_extract_hpc.py
+preprocess_and_extract_hpc.py
 ---------------------------------
 HPC version of the EEG pipeline for KOA (SLURM) cluster.
 Paths use /mnt/lustre/koa/scratch/$USER instead of local Windows paths.
@@ -37,20 +37,29 @@ Output ($SCRATCH/biomarker_results/):
   key_metrics_summary.csv         human-readable key biomarkers, mean +/- std
 
 Requirements:
-  pip install mne mne-icalabel meegkit onnxruntime pycrostates antropy scipy
+  pip install mne mne-icalabel meegkit onnxruntime pycrostates antropy scipy h5py
 
 Usage:
   # Process eyes_closed + eyes_open (default):
-  python 01_preprocess_and_extract_hpc.py
+  python preprocess_and_extract_hpc.py
 
   # Process only auditory -- loads saved eyes CSVs for combined output:
-  python 01_preprocess_and_extract_hpc.py --dataset auditory
+  python preprocess_and_extract_hpc.py --dataset auditory
 
   # Process all three datasets:
-  python 01_preprocess_and_extract_hpc.py --dataset all
+  python preprocess_and_extract_hpc.py --dataset all
 
   # Single subject:
-  python 01_preprocess_and_extract_hpc.py --dataset auditory --subject sub-001
+  python preprocess_and_extract_hpc.py --dataset auditory --subject sub-001
+
+  # Single EEG file (no BIDS structure needed):
+  python preprocess_and_extract_hpc.py --file /path/to/eeg.set
+
+  # All .set files in a folder:
+  python preprocess_and_extract_hpc.py --folder /path/to/eeg_folder
+
+  # Also save preprocessed .set files:
+  python preprocess_and_extract_hpc.py --dataset all --save_set
 """
 
 import argparse
@@ -787,7 +796,7 @@ def process_single_file(set_path: Path, asr_cutoff: int = 15, save_set: bool = F
 
     df = pd.DataFrame([row])
 
-    out_path = OUT_DIR / "single_subject_biomarkers.csv"
+    out_path = OUT_DIR / f"{set_path.stem}_biomarkers.csv"
     df.to_csv(out_path, index=False)
     print(f"\n  Saved -> {out_path}")
 
@@ -818,6 +827,11 @@ def main():
         help="Path to a single raw .set file. Use this for unknown/hackathon EEG data."
     )
     parser.add_argument(
+        "--folder", default=None,
+        help="Path to a folder containing .set files. Processes all .set files found "
+             "and saves a separate CSV per file named <filename>_biomarkers.csv."
+    )
+    parser.add_argument(
         "--dataset",
         choices=["eyes_closed", "eyes_open", "auditory", "both", "all"],
         default="both",
@@ -841,13 +855,35 @@ def main():
     )
     args = parser.parse_args()
 
-    # -- Single-file mode (hackathon) ------------------------------------------
+    # -- Single-file mode ------------------------------------------------------
     if args.file:
         set_path = Path(args.file)
         if not set_path.exists():
             print(f"ERROR: File not found: {set_path}")
             return
         process_single_file(set_path, save_set=args.save_set)
+        return
+
+    # -- Folder mode -----------------------------------------------------------
+    if args.folder:
+        folder = Path(args.folder)
+        if not folder.exists():
+            print(f"ERROR: Folder not found: {folder}")
+            return
+        set_files = sorted(folder.glob("*.set"))
+        if not set_files:
+            print(f"ERROR: No .set files found in {folder}")
+            return
+        print(f"\n  Folder mode: {folder}")
+        print(f"  Found {len(set_files)} .set file(s)")
+        for i, set_path in enumerate(set_files, 1):
+            print(f"\n  [{i:02d}/{len(set_files):02d}] {set_path.name}")
+            try:
+                process_single_file(set_path, save_set=args.save_set)
+            except Exception as exc:
+                import traceback
+                print(f"    ERROR: {exc}")
+                traceback.print_exc()
         return
 
     if args.dataset == "both":
