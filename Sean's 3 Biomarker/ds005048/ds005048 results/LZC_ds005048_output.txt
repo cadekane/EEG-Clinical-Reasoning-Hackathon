@@ -1,0 +1,155 @@
+python3 03_lempel-ziv_complexity_ds005048.py --base_dir /home/sflynn7/koa_scratch/EEG-Clinical-Reasoning-Hackathon/ds005048
+Found 35 subject(s). Mode: rest. Starting LZC extraction...
+
+  Processing sub-01 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    18 clean epochs × 19 channels  [rest_5segs_90s]
+  Processing sub-02 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    18 clean epochs × 19 channels  [rest_5segs_90s]
+  Processing sub-03 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    18 clean epochs × 19 channels  [rest_5segs_90s]
+  Processing sub-04 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    12 clean epochs × 19 channels  [rest_5segs_90s]
+  Processing sub-05 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    18 clean epochs × 19 channels  [rest_5segs_90s]
+  Processing sub-06 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    17 clean epochs × 19 channels  [rest_5segs_90s]
+  Processing sub-07 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    18 clean epochs × 19 channels  [rest_5segs_90s]
+  Processing sub-08 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    18 clean epochs × 19 channels  [rest_5segs_90s]
+  Processing sub-09 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-10 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-11 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-12 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-13 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-14 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-15 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-16 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-17 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-18 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-19 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-20 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-21 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-22 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-23 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-24 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-25 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-26 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-27 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-28 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-29 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-30 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-31 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-32 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-33 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-34 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+  Processing sub-35 (mode=rest) ...
+/home/sflynn7/.local/lib/python3.12/site-packages/pymatreader/utils.py:225: UserWarning: Complex objects (like classes) are not supported. They are imported on a best effort base but your mileage will vary.
+  warn(
+    32 clean epochs × 19 channels  [rest_9segs_162s]
+
+Done. Results saved to: /home/sflynn7/koa_scratch/EEG-Clinical-Reasoning-Hackathon/ds005048/results/LempelZiv_ds005048.csv
+Subjects processed: 35
+
+--- Posterior LZC by group (mode=rest) ---
+              n  mean_lzc  std_lzc
+group                             
+-             2    0.4666   0.1477
+MCI           6    0.6093   0.1304
+Mild AD      16    0.6086   0.1334
+Moderate AD   1    0.5583      NaN
+Normal       10    0.5762   0.0835
