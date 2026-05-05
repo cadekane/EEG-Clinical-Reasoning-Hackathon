@@ -21,7 +21,6 @@ RAG reference documents for EEG biomarkers used in the Alzheimer's disease / FTD
 | Theta/Alpha Ratio | AD > FTD > CN | AD showed the strongest focused slowing relative to alpha |
 | Alpha2 Absolute Power | CN > AD > FTD | CN preserved stronger alpha-2 activity |
 | Alpha2 Relative Power | CN > AD ≈ FTD | CN had more stable alpha-2 rhythm after normalization |
-| Alpha2 Spectral Entropy | AD > CN ≈ FTD | AD alpha-2 activity appeared less organized |
 | Microstate B Coverage | AD ≈ FTD > CN | Dementia groups spent more time in microstate B |
 
 Observed patterns are based on the combined resting-state dataset (ds004504 + ds006036, 88 subjects: 36 AD, 23 FTD, 29 CN), averaged per subject across eyes-closed and eyes-open conditions.
