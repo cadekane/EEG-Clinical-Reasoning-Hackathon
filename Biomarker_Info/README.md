@@ -1,6 +1,6 @@
 # Biomarker_Info
 
-RAG reference documents for EEG biomarkers used in the Alzheimer's disease / FTD classification pipeline. Each file contains key findings, clinical context, and observed patterns from this project, extracted from peer-reviewed publications.
+Reference documents summarizing EEG biomarkers used in the Alzheimer's disease / FTD classification pipeline. Each file contains key findings, clinical context, and observed patterns from this project, extracted from peer-reviewed publications.
 
 ## Files
 
