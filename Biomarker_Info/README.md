@@ -12,15 +12,3 @@ RAG reference documents for EEG biomarkers used in the Alzheimer's disease / FTD
 | [bio2_source2.md](bio2_source2.md) | Alpha-2 Power and Complexity | Moretti 2015 — Alpha3/alpha2 ratio and MCI-to-AD conversion |
 | [bio3_source1.md](bio3_source1.md) | EEG Microstates | Yang 2024 — Microstate features for AD classification |
 | [bio3_source2.md](bio3_source2.md) | EEG Microstates | Chang 2025 — Microstate differences in AD, FTD, and controls |
-
-## Biomarker Summary
-
-| Biomarker | Observed Pattern | Interpretation |
-|---|---|---|
-| DTABR | AD ≈ FTD > CN | AD and FTD showed stronger broad EEG slowing than CN |
-| Theta/Alpha Ratio | AD > FTD > CN | AD showed the strongest focused slowing relative to alpha |
-| Alpha2 Absolute Power | CN > AD > FTD | CN preserved stronger alpha-2 activity |
-| Alpha2 Relative Power | CN > AD ≈ FTD | CN had more stable alpha-2 rhythm after normalization |
-| Microstate B Coverage | AD ≈ FTD > CN | Dementia groups spent more time in microstate B |
-
-Observed patterns are based on the combined resting-state dataset (ds004504 + ds006036, 88 subjects: 36 AD, 23 FTD, 29 CN), averaged per subject across eyes-closed and eyes-open conditions.
