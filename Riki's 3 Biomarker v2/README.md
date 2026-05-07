@@ -290,6 +290,14 @@ CSV output
 
 > CN has clearly higher alpha2 relative power than AD and FTD across all conditions. Spectral entropy is slightly higher in AD/FTD than CN, consistent with less organized alpha rhythms.
 
+*Auditory — standalone, not comparable to resting state (n: AD=17, CN=10)*
+| Group | Alpha2 Abs | Alpha2 Rel | Spec Entropy |
+|---|---|---|---|
+| AD | 0.695 | 0.997 | 1.959 |
+| CN | 0.622 | 1.012 | 1.954 |
+
+> Absolute power scale differs from resting-state (different units/normalization). Alpha2 relative power is near 1.0 for both groups — spectral entropy is nearly identical across AD and CN, suggesting alpha-2 is not a useful discriminator in the auditory condition.
+
 ---
 
 ### Biomarker 3 — EEG Microstates (A/B/C/D Coverage)
